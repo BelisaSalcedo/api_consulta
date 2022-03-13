@@ -7,7 +7,7 @@ class CriptoValorView:
 
     def pedir(self):
         origen = input("Moneda origen: ")
-        while origen not in MONEDAS:
+        while origen not in MONEDAS :
             print("La moneda debe ser una de las siguientes:")
             print(",".join(MONEDAS))
             origen = input("Moneda origen: ")
@@ -15,12 +15,16 @@ class CriptoValorView:
         self.origen = origen
 
         destino = input("Moneda a convertir: ")
-        while destino not in MONEDAS:
+        while destino not in MONEDAS  :
             print("La moneda debe ser una de las siguientes:")
             print(",".join(MONEDAS))
             destino = input("Moneda a convertir: ")
 
         self.destino = destino
+    def pedir_key (self):
+        print('La clave es incorrecta')
+        nueva_ApiKey=input('Debes introducir una clave correcta')
+        return nueva_ApiKey
 
     def mostrar(self, tasa):
         print("1 {} son {:.2f} {}".format(self.origen, tasa, self.destino))
